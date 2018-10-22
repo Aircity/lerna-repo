@@ -1,0 +1,21 @@
+{
+  "name": "vue-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "sideEffects": false,
+  "peerDependencies": {
+    "vue": "*"
+  },
+  "dependencies": {
+    "ant-design-vue": "^1.1.3",
+    "axios": "^0.18.0",
+    "date-fns": "^1.29.0",
+    "lodash": "^4.17.10",
+    "qs": "^6.5.2",
+    "vue-class-component": "^6.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.9.1"
+  }
+}

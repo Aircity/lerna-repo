@@ -1,0 +1,26 @@
+{
+  "name": "@vpm/vue-cli-plugin-env",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "aircity <aircity@drrr.us>",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^4.5.2",
+    "js-yaml": "^3.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aircity/vue-cli-plugin-env-yaml.git"
+  },
+  "homepage": "https://github.com/Aircity/vue-cli-plugin-env-yaml.git#readme",
+  "description": "vue-cli 3 plugin",
+  "keywords": [
+    "vue",
+    "vue-cli",
+    "env",
+    "yaml"
+  ]
+}
