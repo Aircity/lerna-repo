@@ -7,5 +7,8 @@ module.exports = {
   ],
   rules: {
     'vue/require-default-prop': 'off'
+  },
+  parserOptions: {
+    ecmaVersion: 2018
   }
 }
