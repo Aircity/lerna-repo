@@ -2,6 +2,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const Yaml = require('js-yaml')
 const path = require('path')
 const fs = require('fs')
+const { done } = require('@vue/cli-shared-utils')
 
 module.exports = api => {
   api.chainWebpack(config => {
@@ -45,7 +46,7 @@ module.exports = api => {
 
     try {
       fs.writeFileSync(dist, text, 'utf8')
-      console.log('Compile Done!')
+      done(`Build complete.`)
     } catch (e) {
       console.log(e)
     }
