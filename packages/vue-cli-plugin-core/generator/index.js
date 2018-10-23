@@ -5,7 +5,7 @@ module.exports = api => {
 
   api.extendPackage({
     devDependencies: {
-      'babel-plugin-import': '^1.9.0',
+      'babel-plugin-import': '^1.10.0',
       lodash: '^4.17.10',
       'date-fns': '^1.29.0'
     },

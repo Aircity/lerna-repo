@@ -16,6 +16,6 @@
     "vue-class-component": "^6.2.0"
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.9.1"
+    "babel-plugin-import": "^1.10.0"
   }
 }

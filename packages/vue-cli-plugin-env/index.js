@@ -1,5 +1,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const Yaml = require('js-yaml')
+const path = require('path')
+const fs = require('fs')
 
 module.exports = api => {
   api.chainWebpack(config => {
@@ -30,6 +32,21 @@ module.exports = api => {
   api.registerCommand('hooks', args => {
     const config = api.resolveChainableWebpackConfig()
     const finalConfig = config.toConfig()
-    console.log(finalConfig)
+    const dist = path.join(finalConfig.output.path, 'env.js')
+    const text =
+      Object.keys(
+        Yaml.safeLoad(fs.readFileSync(api.resolve('env.yaml'), 'utf8'))
+      )
+        .map(key => {
+          return `var ${key} = "${config[key]['PRD']}"`
+        })
+        .join(';\n') + ';'
+
+    try {
+      fs.writeFileSync(dist, text, 'utf8')
+      console.log('Compile Done!')
+    } catch (e) {
+      console.log(e)
+    }
   })
 }
