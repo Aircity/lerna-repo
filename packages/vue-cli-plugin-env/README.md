@@ -7,7 +7,7 @@ This is a vue-cli 3.x plugin to inject environment variables.
 env.yaml:
 
 ```
-baseURL:
+baseAPI:
  DEV: dev.org 
  QA: qa.org 
  PRD: prd.org
@@ -16,21 +16,21 @@ baseURL:
 npm run build
 
 ```
-console.log(baseURL)
+console.log(baseAPI)
 // => dev.org
 ```
 
 npm run build:qa
 
 ```
-console.log(baseURL)
+console.log(baseAPI)
 // => qa.org
 ```
 
 npm run build:prd
 
 ```
-console.log(baseURL)
+console.log(baseAPI)
 // => prd.org
 ```
 

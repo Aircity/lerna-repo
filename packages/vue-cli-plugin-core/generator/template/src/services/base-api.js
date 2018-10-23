@@ -9,33 +9,33 @@ export class RequestError extends ExtendableError {
 }
 
 /* eslint-disable */
-const resource = axios.create({ baseURL: baseURL })
+const resource = axios.create({ baseURL: baseAPI });
 /*eslint -enable */
-export default resource
+export default resource;
 
 export function request(...args) {
-  return resource.request(...args)
+  return resource.request(...args);
 }
 
 export async function get(url, { params, ip } = {}) {
   let response = await resource.get(url, {
     params,
-    ...(ip ? { headers: { 'X-Forwarded-For': ip } } : {})
-  })
+    ...(ip ? { headers: { "X-Forwarded-For": ip } } : {})
+  });
   if (response.status === 200) {
-    return response.data
+    return response.data;
   } else {
-    throw new RequestError(response.statusText, response.status)
+    throw new RequestError(response.statusText, response.status);
   }
 }
 
 export async function post(url, data, { ip } = {}) {
   let response = await resource.post(url, data, {
-    ...(ip ? { headers: { 'X-Forwarded-For': ip } } : {})
-  })
+    ...(ip ? { headers: { "X-Forwarded-For": ip } } : {})
+  });
   if (response.status === 200) {
-    return response.data
+    return response.data;
   } else {
-    throw new RequestError(response.statusText, response.status)
+    throw new RequestError(response.statusText, response.status);
   }
 }

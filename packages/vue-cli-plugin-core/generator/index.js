@@ -8,6 +8,9 @@ module.exports = api => {
       'babel-plugin-import': '^1.9.0',
       lodash: '^4.17.10',
       'date-fns': '^1.29.0'
+    },
+    scripts: {
+      bootstrap: 'node ./shell/clean.js && yarn install'
     }
   })
 
@@ -31,9 +34,26 @@ module.exports = api => {
         },
         'date-fns'
       ]
-      config.plugins = config.plugins || []
-      config.plugins.push(esLodash)
-      config.plugins.push(esDateFns)
+
+      let plugins = config.plugins || []
+
+      if (
+        plugins.findIndex(
+          value => JSON.stringify(value) === JSON.stringify(esLodash)
+        ) < 0
+      ) {
+        plugins.push(esLodash)
+      }
+
+      if (
+        plugins.findIndex(
+          value => JSON.stringify(value) === JSON.stringify(esDateFns)
+        ) < 0
+      ) {
+        plugins.push(esDateFns)
+      }
+
+      config.plugins = plugins
       return config
     })
     // Linting the generated files
