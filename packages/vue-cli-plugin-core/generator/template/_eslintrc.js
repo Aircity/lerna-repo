@@ -1,4 +1,5 @@
 module.exports = {
+  // parser: 'vue-eslint-parser',
   extends: [
     // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
     'standard',
@@ -9,6 +10,8 @@ module.exports = {
     'vue/require-default-prop': 'off'
   },
   parserOptions: {
-    ecmaVersion: 2018
+    parser: 'babel-eslint',
+    ecmaVersion: 8,
+    sourceType: 'module'
   }
 }
