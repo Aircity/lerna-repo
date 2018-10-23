@@ -33,12 +33,13 @@ module.exports = api => {
     const config = api.resolveChainableWebpackConfig()
     const finalConfig = config.toConfig()
     const dist = path.join(finalConfig.output.path, 'env.js')
+    const yaml2Json = Yaml.safeLoad(
+      fs.readFileSync(api.resolve('env.yaml'), 'utf8')
+    )
     const text =
-      Object.keys(
-        Yaml.safeLoad(fs.readFileSync(api.resolve('env.yaml'), 'utf8'))
-      )
+      Object.keys(yaml2Json)
         .map(key => {
-          return `var ${key} = "${config[key]['PRD']}"`
+          return `var ${key} = "${yaml2Json[key]['PRD']}"`
         })
         .join(';\n') + ';'
 
