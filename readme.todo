@@ -16,9 +16,11 @@ Todos:
     ☐ Theme
     ☐ Template
     ☐ Code generate     
-  New:
-    ✔ Vue-class-component     
+  New Feature:
+    ✔ Vue-class-component  
+    ☐ Mobx    
     ☐ Version page generate    
   Refactor:
     ☐ Axios extensions
     ☐ Improve project structure    
+    ☐ Client middleware    
