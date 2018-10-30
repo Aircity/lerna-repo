@@ -1,6 +1,6 @@
 {
   "name": "@vpm/vue-cli-plugin-core",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "main": "index.js",
   "license": "MIT",
   "gitHead": "fab8de1c6803de9b0814aad2b4a9ad9adbb68dfc",

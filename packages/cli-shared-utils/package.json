@@ -1,6 +1,6 @@
 {
   "name": "@vpm/cli-shared-utils",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "cli-shared-utils",
   "main": "index.js",
   "license": "MIT"
