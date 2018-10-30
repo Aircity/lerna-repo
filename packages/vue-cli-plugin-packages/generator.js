@@ -1,8 +1,8 @@
 module.exports = api => {
   api.extendPackage({
     private: true,
-    workspaces: ["packages/*"]
-  });
+    workspaces: ['packages/*']
+  })
 
-  api.render("./template");
-};
+  api.render('./template')
+}

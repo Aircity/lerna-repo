@@ -1,19 +1,12 @@
 const { getVersion } = require('@vpm/cli-shared-utils')
 
 module.exports = api => {
-  api.render('./template')
-
+  // api.render('./template')
   api.extendPackage({
-    devDependencies: {
-      'babel-plugin-import': getVersion('babel-plugin-import'),
-      lodash: getVersion('lodash'),
-      'date-fns': getVersion('date-fns')
-    },
-    scripts: {
-      bootstrap: 'node ./shell/clean.js && yarn install'
+    dependencies: {
+      'element-ui': getVersion('element-ui')
     }
   })
-
   api.onCreateComplete(() => {
     // Linting the generated files
     if (api.hasPlugin('eslint')) {
