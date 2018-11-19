@@ -1,6 +1,6 @@
 {
   "name": "@vpm/vue-cli-plugin-env",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "author": "aircity <aircity@drrr.us>",
